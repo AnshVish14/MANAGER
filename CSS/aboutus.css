@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #c3c3c3, #cac5c5,rgb(172, 169, 169));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    background:linear-gradient(135deg,rgb(65, 62, 62),rgb(163, 161, 161),rgb(41, 39, 39));
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    text-shadow: #000000 12px,3px,4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.f {
+    margin: 3%;
+    padding: 20px;
+    border-radius: 10px;
+    background:radial-gradient(rgb(212, 210, 210),rgb(207, 205, 205));
+    box-shadow: 0 0 20px rgba(30, 30, 30, 0.1);
+    animation: slideInUp 1s ease-out;
+}
+
+h1 {
+    font-size: 1.6cm;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    animation: fadeIn 2s ease-in;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #b5b3b3;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    animation: slideInUp 1.2s ease-in-out;
+}
+
+.grid-item, .grid-item1 {
+    padding: 20px;
+    background:linear-gradient(rgb(134, 130, 130),rgb(141, 134, 134));
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.grid-item1:nth-child(odd),
+.grid-item:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.grid-item1:nth-child(even),
+.grid-item:nth-child(even) {
+    animation-delay: 0.8s;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #444242;
+    text-transform: capitalize;
+    border-bottom: 2px solid #282525;
+    padding-bottom: 10px;
+    animation: fadeIn 2s ease-in;
+}
+.card {
+    background: linear-gradient(145deg, #adacac, #e4e4e4,rgb(155, 148, 148));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card h2 {
+    margin-bottom: 15px;
+    color: #121212;
+    font-size: 2.2em;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 60;
+}
+.card p {
+    font-size: 1em;
+    color: #242323;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 300;
+}
+.grid-item1 p, p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #000000;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    padding: 10px 0;
+    background-color: #9b9a9a;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    animation: fadeInUp 2s ease-out;
+}
+
+footer p {
+    margin: 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

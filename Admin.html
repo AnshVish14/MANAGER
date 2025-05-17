@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/Admin.css" rel="stylesheet">
+    <title>Admin Panel</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 0;
+            color: #ddd;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            border-bottom-style: groove;
+            border-left-style: groove;
+        }
+        .sidebar a:hover {
+            background-color: #2c2a2a;
+            color: #fff;
+            border-bottom-style:hidden;
+
+        }
+        /* Content Area */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header h1 {
+            font-size: 32px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border-bottom-style: groove;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            border-bottom-style: groove;
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<?php
+    // Start session and include any needed files (like authentication checks)
+    session_start();
+    
+    // Check if admin is logged in
+    if (!isset($_SESSION['name'])) {
+        header('Location: AdminLogin.php');
+        exit();
+    }
+    
+    ?>
+<body>
+        <div class="sidebar">
+            <h2><b><center>Admin Panel</center></b></h2>
+            <a href="dashboard.php">Dashboard</a>
+            <a href="manage_users.php">Manage Users</a>
+            <a href="manage_jobs.php">Manage Jobs</a>
+            <a href="manage_messages.php">Manage Messags</a>
+            <a href="logout.php">Log Out</a>
+        </div>
+    
+        <div class="content">
+            <div class="header">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="card">
+                <h3>Welcome, Admin!</h3>
+                <p>Here you can manage users, jobs, and settings for the job portal.</p>
+            </div>
+            <div class="card">
+                <h3>Recent Activity</h3>
+                <p>View recent activities and updates on the platform.</p>
+            </div>
+            <div class="card">
+                <h3>Statistics</h3>
+                <p>Check various statistics and reports related to job postings and user activity.</p>
+            </div>
+        </div>
+</body>
+</html>

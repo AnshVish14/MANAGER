@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/a1.css" rel="stylesheet">
+    <title>Job Portal</title>
+    <style>
+        .marquee {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(80%); }
+            100% { transform: translateX(-70%); }
+        }
+        .marquee h1 {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+   
+        <div class="marquee">
+            <h1>HAR HAR MAHADEV</h1>
+        </div>
+        <h2>Welcome to Job Portal</h2>
+        <p>Your gateway to finding and managing jobs effortlessly.</p>  
+        <script src="javascript/Signout.js"></script>  
+        <div class="time" id="current-time"></div>
+        <div class="E">
+        <center><a href="#" onclick="logout()" >logout</a></center>
+        </div>
+    </div><br><br>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item"><a href="Login.html"><h2>Login/Register</h2></a></div>
+            <div class="grid-item"><a href="JobAvilable.php"><h2>Job Available</h2></a></div>
+            <div class="grid-item"><a href="contactUs.html"><h2>Contact Us</h2></a></div>
+            <div class="grid-item"><a href="About US.html"><h2>About Us</h2></a></div>
+            <div class="grid-item"><a href="USERPROFILE.php"><h2>USER ID</h2></a></div>
+            <div class="grid-item"><a href="Uservisible.php"><h2>Job Applied</h2></div>
+        </div>
+    </div>
+    
+    <br>
+    <div class="hero2">I hope that you will find the job that you want.</div>
+    <br>
+
+    <footer>
+        &copy; 2024 Job Portal. "HAR HAR MAHADEV".
+    </footer>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('current-time').textContent = `Current Time: ${timeString}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
